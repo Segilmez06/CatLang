@@ -5,11 +5,11 @@ CatLang is an experimental scripting language that runs on C#.
 ### TODO
 
 - [x] Variables
-- [] Math
-- [] Statements
-- [] Loops
-- [] Functions
-- [] Modules
+- [ ] Math
+- [ ] Statements
+- [ ] Loops
+- [ ] Functions
+- [ ] Modules
 
 ### Examples
 
