@@ -30,8 +30,6 @@ namespace CatLang.Lang
         List<Variable> Variables = new();
         List<Part> Parts = new();
 
-        int LastOutCode = 0;
-
         /// <summary>
         /// Initialize language
         /// </summary>
@@ -48,16 +46,22 @@ namespace CatLang.Lang
 #endif
 
             Variable v = new Variable();
-            v.Tag = "out";
-            v.Value = 0;
-            v.Type = "int";
+            v.Tag = ".out";
+            v.Value = "";
+            v.Type = "str";
             Variables.Add(v);
+
+            Variable e = new Variable();
+            e.Tag = ".exitcode";
+            e.Value = 0;
+            e.Type = "int";
+            Variables.Add(e);
 
             if (ConsoleSession)
             {
                 while (IsRunning)
                 {
-                    if (LastOutCode != 0)
+                    if ((int)Variables.Find(x => x.Tag == ".exitcode").Value != 0)
                     {
                         Console.ForegroundColor = ErrorColor;
                     }
@@ -114,8 +118,8 @@ namespace CatLang.Lang
             {
                 cmdout = new(1, new NullReferenceException().Message);
             }
-            Variables.Find(x => x.Tag == "out").Value = cmdout.Output;
-            LastOutCode = cmdout.Code;
+            Variables.Find(x => x.Tag == ".out").Value = cmdout.Output;
+            Variables.Find(x => x.Tag == ".exitcode").Value = cmdout.Code;
         }
 
         /// <summary>

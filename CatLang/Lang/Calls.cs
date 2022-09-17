@@ -39,7 +39,8 @@ namespace CatLang.Lang
                 if (Arguments[0].GetType() == typeof(Variable))
                 {
                     Variable v = (Variable)Arguments[0];
-                    msg = v.Value.ToString();
+                    object str = v.Value;
+                    msg = str.ToString();
                     //msg = ((Variable)Arguments[0]).Value.ToString();
                 }
                 Console.WriteLine(msg);
@@ -102,11 +103,13 @@ namespace CatLang.Lang
         public object Output { get; set; }
         public CallOut()
         {
-
+            Code = 0;
+            Output = "";
         }
         public CallOut(int ExitCode)
         {
             Code = ExitCode;
+            Output = "";
         }
         public CallOut(int ExitCode, object CallOutput)
         {
