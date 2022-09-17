@@ -1,4 +1,4 @@
-# CatLang
+﻿# CatLang
 
 CatLang is an experimental scripting language that runs on C#.
 
@@ -24,7 +24,7 @@ write:usr_input
 I hope this is going to be working:
 ```catlang
 set:max_num 100
-set min_num 1
+set:min_num 1
 set:random_number 0
 math:random_number rand $max_num $min_num
 
@@ -52,3 +52,4 @@ end while
 ## Contributing
 
 The best thing you can do is repoting bugs and issues. Also you can create pull requests.
+Also starring the repo will give me motivation. 😁

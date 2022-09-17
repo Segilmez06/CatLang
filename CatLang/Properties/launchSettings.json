@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "CatLang - File": {
+      "commandName": "Project",
+      "commandLineArgs": "meow.cts"
+    },
+    "CatLang - Console": {
+      "commandName": "Project"
+    }
+  }
+}
